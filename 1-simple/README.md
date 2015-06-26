@@ -9,7 +9,9 @@
 
 # Building
 
-* `cmake .`
+* `mkdir bin`
+* `cd bin`
+* `cmake ..`
   * Output similar to `./configure` when using autotools
   * Creates a bunch of files
 * `make`
