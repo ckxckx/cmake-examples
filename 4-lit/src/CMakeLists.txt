@@ -4,7 +4,7 @@ set(SRCS
 )
 
 # Add project CFLAGS in a variable
-set(ENCODE_CFLAGS "-std=gnu99 -fPIC -Wall -Werror -Wextra -pedantic -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-value -Wno-unused-variable")
+set(ENCODE_CFLAGS "-std=gnu99 -fPIC -Wall -Werror -Wextra -pedantic -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-value -Wno-unused-variable -Wno-deprecated-declarations")
 
 # Change the CFLAGS
 set(CMAKE_C_FLAGS ${CMAKE_C_FLAGS} ${ENCODE_CFLAGS})
@@ -50,11 +50,11 @@ if (WITH_BZIP2)
   if (BZIP2_FOUND)
     # Turn on code that depends on BZip2 library
     add_definitions(-DWITH_BZIP2)
-  
+
     # Print information about the BZIP2 library
     message("BZip2 include dir: ${BZIP2_INCLUDE_DIR}")
     message("BZip2 libraries: ${BZIP2_LIBRARIES}")
-  
+
     # Add the includes and link with the library
     include_directories(${BZIP2_INCLUDE_DIRS})
     target_link_libraries (encode ${BZIP2_LIBRARIES})
